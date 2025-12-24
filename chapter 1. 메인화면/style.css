@@ -1,0 +1,145 @@
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background-color: rgba(0, 0, 0, 0.007);
+    color: #333;
+    display: flex; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 헤더 */
+.left_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #EBEBEB; 
+    padding: 60px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.left_header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    display: block;
+}
+
+/* 블로그 타이틀 로고 */
+.title_logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+/* 블로그 타이틀 로고 */
+.link_logo {
+    color: #222;
+}
+
+/* 블로그 설명 */
+.left_header {
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* 카테고리 영역 */
+.left_header .category_list {
+    margin-top: 50px;
+    list-style: none;
+    width: 100%;
+}
+
+.left_header .category_list li {
+    margin-bottom: 12px;
+}
+
+.left_header .category_list li a {
+    font-size: 0.95rem;
+    color: #555;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+/* 카테고리 호버 효과 */
+.left_header .category_list li a:hover {
+    color: #000;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+
+/* 메인 영역 설정 */
+main {
+    margin-left: 300px; /* 헤더 너비만큼 띄우기 */
+    width: calc(100% - 300px);
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* 커버 그룹 및 아이템 컨테이너 */
+.area_cover, .main_photo, .list_main_photo, .list_main_photo li {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 중복 방지 */
+.list_main_photo li, 
+.s_cover_item {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 이미지 태그 */
+.list_main_photo img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* 티스토리 상단 광고/메뉴바 위치 조정 */
+[##_revenue_list_upper_##] {
+    margin-bottom: 20px;
+}
+
+/* 반응형 설정 */
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .left_header {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+    }
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
