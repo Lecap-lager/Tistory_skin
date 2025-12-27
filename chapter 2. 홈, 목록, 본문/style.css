@@ -1,0 +1,148 @@
+/* 1. Global & Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    background-color: #fff;
+}
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* 2. Left Header (Sidebar) */
+.left_header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: #f8f8f8; /* 살짝 더 밝은 톤으로 조정 */
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    border-right: 1px solid #eee;
+}
+.profile_area img {
+    width: 85px; height: 85px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+.title_logo { font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+.blog_desc { font-size: 0.85rem; color: #888; margin-bottom: 20px; line-height: 1.4; }
+.left_header hr { width: 30px; border: 0; border-top: 1px solid #ddd; margin-bottom: 30px; }
+
+/* 카테고리 메뉴 */
+.category_list .tt_category { width: 100%; text-align: center; }
+.category_list .tt_category li { margin-bottom: 15px; }
+.category_list .tt_category a { font-size: 0.9rem; color: #666; font-weight: 400; }
+.category_list .tt_category a:hover { color: #000; font-weight: 600; }
+
+/* 3. Main Content & Layout Control */
+main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+}
+
+/* 페이지별 노출 로직 */
+.area_cover { display: none; }
+#tt-body-index .area_cover { display: block; }
+
+/* 4. Home Cover (Hero Image) */
+.area_cover {
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    overflow: hidden;
+}
+.full_img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 5. Content Area (Common) */
+.area_view {
+    margin: 0 auto;
+    padding: 80px 40px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- [Case A] 리스트 그리드 스타일 (Index/Category) --- */
+#tt-body-index .area_view,
+#tt-body-category .area_view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1400px; /* 너무 넓게 퍼지지 않도록 제한 */
+}
+
+.index_item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+.thumb_rect { width: 100%; height: 100%; }
+.thumb_rect img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.index_item:hover .thumb_rect img { transform: scale(1.08); }
+
+/* 호버 오버레이 */
+.article_info {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; opacity: 0; transition: opacity 0.4s ease;
+    padding: 30px;
+}
+.index_item:hover .article_info { opacity: 1; }
+
+.info_inner .info_category { display: block; font-size: 0.75rem; color: #ccc; margin-bottom: 12px; letter-spacing: 1px; }
+.info_inner .info_title { display: block; font-size: 1.15rem; font-weight: 500; margin-bottom: 18px; line-height: 1.4; }
+.info_inner .info_summary { font-size: 0.85rem; color: #ddd; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.6; }
+.info_inner .info_date { display: block; margin-top: 15px; font-size: 0.75rem; color: #999; }
+
+/* --- [Case B] 글 본문 스타일 (Permalink) --- */
+#tt-body-page .area_view {
+    max-width: 850px;
+    display: block;
+}
+.article_container { width: 100%; }
+
+.titleWrap { text-align: center; margin-bottom: 70px; }
+.titleWrap .category { margin-bottom: 15px; font-size: 0.85rem; color: #999; letter-spacing: 2px; }
+.titleWrap h2 { font-size: 2.4rem; font-weight: 300; margin-bottom: 20px; color: #111; letter-spacing: -1px; }
+.titleWrap .date { font-size: 0.9rem; color: #bbb; font-family: 'Georgia', serif; }
+
+.article_body { font-size: 1.05rem; line-height: 1.95; color: #333; }
+.article_body p { margin-bottom: 28px; }
+.article_body img { margin: 45px auto; border-radius: 3px; }
+.article_body blockquote { border-left: 3px solid #333; padding-left: 20px; margin: 35px 0; color: #666; font-style: italic; }
+
+/* 6. Responsive (모바일 대응) */
+@media screen and (max-width: 1024px) {
+    body { flex-direction: column; }
+    .left_header {
+        position: relative; width: 100%; height: auto;
+        padding: 40px 20px; border-right: 0; border-bottom: 1px solid #eee;
+    }
+    main { margin-left: 0; width: 100%; }
+    .area_cover { height: 50vh; }
+    
+    #tt-body-index .area_view,
+    #tt-body-category .area_view { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); padding: 25px; }
+}
+
+@media screen and (max-width: 768px) {
+    .area_view { padding: 40px 20px; }
+    .titleWrap h2 { font-size: 1.8rem; }
+    .article_body { font-size: 1rem; }
+}
