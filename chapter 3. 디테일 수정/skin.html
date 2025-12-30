@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[##_page_title_##]</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body id="[##_body_id_##]">
+    <s_t3>
+        [##_revenue_list_upper_##]
+
+        <header class="left_header">
+            <div class="profile_area">
+                [##_blog_image_##]
+            </div>
+            <h1 class="title_logo">
+                <a href="[##_blog_link_##]">[##_title_##]</a>
+            </h1>
+            <p class="blog_desc">[##_desc_##]</p>
+            <hr>
+            <nav class="list_category">
+                [##_category_list_##]
+            </nav>
+            <footer>
+                <ul class="list_control">
+                <li><a href="[##_owner_url_##]/entry/post" class="ico_skin link_write" title="글쓰기">글쓰기</a></li>
+                <li><a href="[##_owner_url_##]" class="ico_skin link_manage" title="관리">관리</a></li>
+              </ul>
+            </footer>
+        </header>
+
+        <main id="main_content">
+            <div class="area_cover">
+                <s_cover_group>
+                    <s_cover_rep>
+                        <s_cover name='main_photo'>
+                            <div class="main_photo">
+                                <s_cover_item>
+                                    <s_cover_item_thumbnail>
+                                        <img src="//i1.daumcdn.net/thumb/R1600x0/?fname=[##_cover_item_thumbnail_##]" class="full_img" alt="메인 커버 이미지">
+                                    </s_cover_item_thumbnail>
+                                </s_cover_item>
+                            </div>
+                        </s_cover>
+                    </s_cover_rep>
+                </s_cover_group>
+            </div>
+
+            <div class="area_view">
+                <s_list>
+                    <div class="list_title_area">
+                        <h2>[##_list_conform_##] <span>([##_list_count_##])</span></h2>
+                        <hr>
+                    </div>
+                   
+                    
+                    <div class="grid_container"> 
+                        <s_list_rep>
+                            <div class="index_item [##_list_style_##]">
+                                
+                                <div class="list_style">
+                                    <a href="[##_list_rep_link_##]" class="link_article">
+                                        <s_list_rep_thumbnail>
+                                            <div class="thumb_rect"><img src="[##_list_rep_thumbnail_url_##]" alt="[##_list_rep_title_##]"></div>
+                                        </s_list_rep_thumbnail>
+                                        <div class="article_info">
+                                            <div class="info_inner">
+                                                <span class="info_category">[##_list_conform_##]</span>
+                                                <strong class="info_title">[##_list_rep_title_##]</strong>
+                                                <p class="info_summary">[##_list_rep_summary_##]</p>
+                                                <span class="info_date">[##_list_rep_regdate_##]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="photo_style">
+                                    <a href="[##_list_rep_link_##]" class="link_article">
+                                        <div class="thumb_rect">
+                                            <s_list_rep_thumbnail><img src="[##_list_rep_thumbnail_url_##]" alt="[##_list_rep_title_##]"></s_list_rep_thumbnail>
+                                        </div>
+                                        <div class="article_info">
+                                            <div class="info_inner">
+                                                <strong class="info_title">[##_list_rep_title_##]</strong>
+                                                <span class="info_date">[##_list_rep_regdate_##]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </s_list_rep>
+                    </div>
+                </s_list>
+
+                <s_article_rep>
+                    <s_permalink_article_rep>
+                        <article class="article_container">
+                            <header class="titleWrap">
+                                <div class="category">
+                                    <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
+                                </div>
+                                <h2>[##_article_rep_title_##]</h2>
+                                <div class="date">[##_article_rep_date_##]</div>
+                                <hr> 
+                            </header>
+
+                            <section class="article_body">
+                                [##_article_rep_desc_##]
+                            </section>
+
+                            <footer class="article_footer">
+                                <s_tag_label>
+                                    <div class="tag_list">[##_tag_label_rep_##]</div>
+                                </s_tag_label>
+                            </footer>
+                        </article>
+                    </s_permalink_article_rep>
+
+                    <s_index_article_rep>
+
+                    </s_index_article_rep>
+                </s_article_rep>
+                
+                <s_paging>
+                    <div class="paging">
+                        <a [##_prev_page_##] class="[##_no_more_prev_##]">◀ PREV </a>
+                        <span class="numbox">
+                        <s_paging_rep>
+                            <a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+                        </s_paging_rep>
+                        </span>
+                        <a [##_next_page_##] class="[##_no_more_next_##]">NEXT ▶</a>
+                    </div>
+                </s_paging>
+                
+            </div>
+
+        </main>
+    </s_t3>
+</body>
+</html>
